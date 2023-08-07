@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ToDo List</title>
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+  <h1>ToDo List</h1>
+  <form action="/add" method="GET">
+    <input type="text" name="todo" placeholder="New ToDo">
+    <button type="submit">Add</button>
+  </form>
+
+  <ul>
+    <% todos.forEach((todo, index) => { %>
+      <li>
+        <%= todo %>
+        <a href="/delete/<%= index %>">Delete</a>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>
